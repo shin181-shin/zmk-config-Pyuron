@@ -8,10 +8,38 @@
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
+    tapping-term-ms = <150>;
+};
+
+&lt {
+    tapping-term-ms = <150>;
+    flavor = "balanced";
 };
 
 / {
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        f2 {
+            bindings = <&kp F2>;
+            key-positions = <13 12>;
+        };
+
+        lclk {
+            bindings = <&mkp LCLK>;
+            key-positions = <11 12>;
+        };
+
+        lclk2 {
+            bindings = <&mkp LCLK>;
+            key-positions = <16 17>;
+        };
+
+        rclk {
+            bindings = <&mkp RCLK>;
+            key-positions = <17 18>;
+        };
+    };
 
     macros {
         to_layer_0: to_layer_0 {
@@ -36,7 +64,7 @@
     behaviors {
     };
 
- keymap {
+    keymap {
         compatible = "zmk,keymap";
 
         default_layer {
